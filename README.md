@@ -35,7 +35,6 @@ your choice: 1
 100.00 Celcius = 80.00 Reamur
 ```
 
-
 ## 📝 Catatan
 Input harus berupa integer
 

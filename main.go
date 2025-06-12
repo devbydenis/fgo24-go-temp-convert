@@ -24,10 +24,11 @@ func ConvertMenu() {
 }
 
 func main() {
-	var temperatureInput float64
-	var choiceDestination int
 	var histories []models.History
 	
+	for {
+	var temperatureInput float64
+	var choiceDestination int
 	if temperatureInput == 0 {
 		MainMenu()
 		_, err := fmt.Scan(&temperatureInput)
@@ -69,21 +70,21 @@ func main() {
 			Type: "Celcius to Kelvin",
 		})
 	case 4:
-		os.Exit(0)
+		if len(histories) == 0 {
+			fmt.Println("No history available.")
+		} else {
+			fmt.Println("History:")
+			for _, history := range histories {
+				fmt.Println(history)
+			}
+		}
+		return
 	case 5:
-		// if len(histories) == 0 {
-		// 	fmt.Println("No history available.")
-		// } else {
-		// 	fmt.Println("History:")
-		// 	for _, history := range histories {
-		// 		fmt.Printf("%s\n", history)
-		// 	}
-		// }
-		// return
+		os.Exit(0)
 	default:
 		fmt.Println("Invalid choice. Make sure you enter a number between 1 and 5.")
 	}
-	
+	}
 		
 		
 		
